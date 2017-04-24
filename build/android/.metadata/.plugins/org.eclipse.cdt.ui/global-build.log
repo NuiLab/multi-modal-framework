@@ -1,0 +1,460 @@
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:35: fatal error: device/generic_device.h: No such file or directory
+ #include "device/generic_device.h"
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build clean 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Clean          : generic_device [armeabi]
+[armeabi] Clean          : stdc++ [armeabi]
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] StaticLibrary  : libstdc++.a
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+ #include "device/generic_device.h"
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+ #include "device/generic_device.h"
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:3:35: fatal error: device/generic_device.h: No such file or directory
+ #include <device/generic_device.h>
+                                   ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:3:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/domain.h:4:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:4:0:
+/usr/include/c++/4.8/functional:48:28: fatal error: bits/c++config.h: No such file or directory
+ #include <bits/c++config.h>
+                            ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:4:0:
+/usr/include/c++/4.8/functional:48:28: fatal error: bits/c++config.h: No such file or directory
+ #include <bits/c++config.h>
+                            ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:4:0:
+/usr/include/c++/4.8/functional:48:28: fatal error: bits/c++config.h: No such file or directory
+ #include <bits/c++config.h>
+                            ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:4:0:
+/usr/include/c++/4.8/functional:48:28: fatal error: bits/c++config.h: No such file or directory
+ #include <bits/c++config.h>
+                            ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build clean 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Clean          : generic_device [armeabi]
+[armeabi] Clean          : stdc++ [armeabi]
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:4:0:
+/usr/include/c++/4.8/functional:48:28: fatal error: bits/c++config.h: No such file or directory
+ #include <bits/c++config.h>
+                            ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+jni/generic_device.cpp:4:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:6:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/domain.h:4:22: fatal error: functional: No such file or directory
+ #include <functional>
+                      ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:7:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:7:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:7:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:7:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from jni/generic_device.cpp:7:0:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from /home/jason/Documents/tamgef/OpenHID/include/device/generic_device.h:7:0,
+                 from jni/generic_device.cpp:5:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+In file included from /home/jason/Documents/tamgef/OpenHID/include/device/generic_device.h:7:0,
+                 from jni/generic_device.cpp:5:
+/home/jason/Documents/tamgef/OpenHID/include/device/event.h:9:31: fatal error: boost/uuid/uuid.hpp: No such file or directory
+ #include <boost/uuid/uuid.hpp>
+                               ^
+compilation terminated.
+make: *** [obj/local/armeabi/objs/generic_device/generic_device.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****

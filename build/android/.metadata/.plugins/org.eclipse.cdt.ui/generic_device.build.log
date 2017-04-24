@@ -1,0 +1,10 @@
+
+**** Build of configuration Default for project generic_device ****
+
+/home/jason/.android/ndk/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[armeabi] Compile++ thumb: generic_device <= generic_device.cpp
+[armeabi] SharedLibrary  : libgeneric_device.so
+[armeabi] Install        : libgeneric_device.so => libs/armeabi/libgeneric_device.so
+
+**** Build Finished ****

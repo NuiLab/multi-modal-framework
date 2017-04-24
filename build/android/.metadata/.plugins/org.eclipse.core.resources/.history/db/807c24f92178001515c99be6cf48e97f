@@ -1,0 +1,5 @@
+NDK_TOOLCHAIN_VERSION := 4.8
+APP_CPPFLAGS += -std=c++11
+APP_STL := gnustl_static
+LOCAL_EXPORT_C_INCLUDES += ${ANDROID_NDK}/sources/cxx-stl/gnu-libstdc++/4.8/include/
+LOCAL_EXPORT_C_INCLUDES += /usr/include/boost/

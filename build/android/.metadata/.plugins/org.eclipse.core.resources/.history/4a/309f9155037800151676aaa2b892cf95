@@ -1,0 +1,8 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := generic_device
+LOCAL_SRC_FILES := generic_device.cpp
+
+include $(BUILD_SHARED_LIBRARY)

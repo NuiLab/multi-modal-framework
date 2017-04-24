@@ -1,0 +1,230 @@
+#ifndef EXPERIMENT_CONTROLLER_H
+#define EXPERIMENT_CONTROLLER_H
+
+#include <algorithm>
+#include <chrono>
+#include <exception>
+#include <functional>
+#include <iostream>
+#include <memory>
+#include <string>
+#include <stdexcept>
+#include <type_traits>
+#include <vector>
+#include <queue>
+
+namespace tamgef {
+namespace experiment {
+
+class Treatment;
+
+struct ExperimentController
+{ 
+  enum class ExperimentStates
+  {
+    Initial,
+    started,
+    Running,
+    Exited,
+    Expired,
+    Stopped
+  };
+
+
+  enum class ExperimentModes
+  {
+    None,
+    Training,
+    Treatment
+  };
+
+  struct ExperimentGuard
+  {
+    ExperimentGuard()
+      : ExperimentGuard(false)
+    {}
+    
+    ExperimentGuard(bool shuffleTreatment)
+      : shuffled(shuffleTreatment),
+        started(false),
+        timerSet(false),
+        paused(false),
+        popped(false)
+    {}
+
+
+    bool shuffled;
+    bool started;
+    bool timerSet;
+    bool paused;
+    bool popped;
+  };
+
+  struct ExperimentStatus
+  {
+    ExperimentStatus()
+      : ExperimentStatus(ExperimentGuard(false))
+    {}
+    
+    ExperimentStatus(ExperimentGuard experimentGuard)
+
+      : state(ExperimentStates::Initial),
+        mode(ExperimentModes::None),
+        guard(experimentGuard)
+    {}
+
+    ExperimentGuard guard;
+    ExperimentStates state;
+    ExperimentModes mode;
+  };
+
+
+  ExperimentController(std::string const & subjectName, 
+                       std::string const & experimentName, 
+                       bool shuffleTreatment);
+
+  ~ExperimentController();
+
+  void append(Treatment const &);
+  bool abort();
+  void clean();
+  void resume();
+  bool ready();
+  void start();
+  void stop();
+  ExperimentStatus status();
+  bool next();
+  bool pause();
+  bool ready();
+  void shuffle();
+  std::size_t size();
+  std::string time();
+  void update();
+  void write(std::ostream &, std::string const&);
+  
+  friend std::ostream & operator << (std::ostream &, ExperimentStates const &);
+  friend std::ostream & operator << (std::ostream &, ExperimentModes const &);
+  friend std::ostream & operator << (std::ostream &, ExperimentGuard const &);
+  friend std::ostream & operator << (std::ostream &, ExperimentStatus const &);
+  friend std::ostream & operator << (std::ostream &, ExperimentController const &);
+
+  ExperimentStatus mExperimentStatus;
+  std::string mExperimentName;
+  std::string mSubjectName;
+  std::weak_ptr<Treatment> pCurrentTreatment;
+  std::vector<Treatment> mTreatmentList;
+  std::chrono::steady_clock::time_point mExperimentTime;
+  std::chrono::steady_clock::time_point mTreatmentTime;
+
+};// class ExperimentController
+
+ExperimentController::ExperimentController(std::string const & experimentName,
+                                           std::string const & subjectName,
+                                           bool shuffleTreatment)
+  : mExperimentStatus(ExperimentGuard(shuffleTreatment)),
+    mExperimentName(experimentName),
+    mSubjectName(subjectName)
+{}
+
+void ExperimentController::append(Treatment const & treatment)
+{
+  if (status().guard.started)
+    throw std::runtime_error("attempt to append treatment after started");
+
+  mTreatmentList.push_back(treatment);
+}
+
+void ExperimentController::update()
+{
+  if (!status().guard.started || !status().guard.popped)
+    return;
+  
+  // update treatment status
+}
+
+void ExperimentController::clean()
+{
+  mTreatmentList.clear();
+  mExperimentStatus.guard.timerSet = false;
+  mExperimentStatus.guard.started = false;
+  mExperimentStatus.guard.paused = false;
+}
+
+std::ostream & operator << (std::ostream & out, ExperimentController::ExperimentStates const & state)
+{
+  switch (state)
+  {
+  case ExperimentController::ExperimentStates::Initial:
+    out << "Initial"; 
+    break;
+  case ExperimentController::ExperimentStates::Running:
+    out << "Running"; 
+    break;
+  case ExperimentController::ExperimentStates::Exited:
+    out << "Exited"; 
+    break;
+  case ExperimentController::ExperimentStates::Expired:
+    out << "Expired"; 
+    break;
+  case ExperimentController::ExperimentStates::Stopped:
+    out << "Stopped"; 
+    break;
+  }
+    
+  return out;
+}
+
+std::ostream & operator << (std::ostream & out, ExperimentController::ExperimentModes const & mode)
+{
+  switch (mode)
+  {
+  case ExperimentController::ExperimentModes::None:
+    out << "None"; 
+    break;
+  case ExperimentController::ExperimentModes::Training:
+    out << "Training"; 
+    break;
+  case ExperimentController::ExperimentModes::Treatment:
+    out << "Treatment"; 
+    break;
+  }
+
+  return out;
+}
+
+std::ostream & operator << (std::ostream & out, ExperimentController::ExperimentGuard const & guard)
+{
+  out << "{ExperimentController::ExperimentGuard} : "
+      << " started: " << guard.started
+      << " shuffled: " << guard.shuffled
+      << " Timer Set: " << guard.timerSet
+      << " First Pop: " << guard.popped
+      << " paused: " << guard.paused;
+  
+  return out;
+}
+
+std::ostream & operator << (std::ostream & out, ExperimentController::ExperimentStatus const & status)
+{
+  out << "{ExperimentController::ExperimentStatus} : "
+      << " Experiment State: " << status.state
+      << " Experiment Mode: " << status.mode
+      << " Experiment Guard: " << status.guard;
+
+  return out;
+}
+
+std::ostream & operator << (std::ostream & out, ExperimentController const & controller)
+{
+  out << "{ExperimentController}: "
+      << " Experiment Name: "  << controller.mExperimentName
+      << " Subject Name: " << controller.mSubjectName 
+      << " Experiment Status: " << controller.mExperimentStatus;
+  
+  return out;
+}
+
+} // namespace experiment
+} // namespace tamgef
+
+#endif

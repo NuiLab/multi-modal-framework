@@ -1,0 +1,378 @@
+/// @file controller.h ///
+
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
+
+#include <algorithm>
+#include <assert.h>
+#include <atomic>
+#include <concurrentqueue/concurrentqueue.h>
+#include <exception>
+#include <iostream>
+#include <mutex>
+#include <memory>
+#include <stdexcept>
+#include <system_error>
+#include <thread>
+#include <vector>
+
+#include <controller/iobservable.h>
+#include <controller/iobserver.h>
+#include <queue/iqueue.h>
+
+//! @brief tamgef Project namespace.
+namespace tamgef
+{
+
+namespace controller
+{
+
+/// @brief ObserverController template class.
+/// @details Polls IQueue<T> object and buffers 
+/// incoming messages. Implements IObservable<T> 
+/// interface to facilitate observers.
+template<typename T> 
+class ObserverController : 
+	public IObservable<T>, 
+	public IController<ConcurrentQueue, T>
+{
+public:
+	// does not support copy or move operations 
+	ObserverController(ObserverController<T> const&) = delete;
+	ObserverController<T>& operator=(
+			ObserverController<T> const&) = delete;
+	ObserverController(ObserverController<T>&&) = delete;
+	ObserverController<T>& operator=(
+			ObserverController<T>&&) = delete;
+
+	/// @brief Default Constuctor
+	ObserverController();
+
+	/// @brief Constructor
+	/// @param[in] queueable Queue being polled. 
+	ObserverController(std::shared_ptr<IQueue<T>> queue);
+
+	//! @brief Destructor
+	virtual ~ObserverController();
+
+	/// @brief Returns polling status.
+	bool isPolling();
+
+	/// @brief Returns notification status.
+	bool isNotifying();
+
+	/// @brief Sets polling status to true
+	/// @returns @p true if polling thread started successfully
+	/// @p false otherwise
+	bool startPolling();
+
+	/// @brief Sets notification status to true
+	/// @returns @p true if notification thread started successfully
+	/// @p false otherwise
+	bool startNotifying();
+
+	/// @brief Sets polling status to false and joins polling thread
+	/// @returns @p true if polling thread was joined successfully,
+	/// @p false otherwise
+	bool stopPolling();
+
+	/// @brief Sets polling status to false and joins notification
+	///	thread
+	/// @returns @p true if notification thread was joined
+	///	successfully, @p false otherwise.
+	bool stopNotifying();
+
+	/// @brief Sets polling and notification status to true
+	/// and attempts to start both threads.  
+	/// @returns @p true if start_polling() and start_notifying() 
+	/// started successfully, @p false if either fails.  
+	bool start() override; 
+
+	/// @brief Stops polling and notification status to false
+	/// and attempts to join both threads.
+	/// @returns @p true if stop_polling() and stop_notifying()
+	/// returns true, @p false otherwise. 
+	bool stop() override;
+
+	/// @sa IObservable<T>::attach_observer(std::shared_ptr<IObserver<T>> observer)
+	bool attachObserver(
+			std::shared_ptr<IObserver<T>> observer) override;
+
+	/// @sa IObservable<T>::detach_observer(std::shared_ptr<IObserver<T>> observer)
+	bool detachObserver(
+			std::shared_ptr<IObserver<T>> observer) override;
+
+	/// @brief Assigns reference to queue to be polled.
+	bool setPollQueue(std::shared_ptr<IQueue<T>> pollQueue);
+
+private:
+	//! @brief Locks observers vector.
+	std::mutex mObserversMutex; 
+
+	//! @brief Buffers polled messages.
+	moodycamel::ConcurrentQueue<T> mMessages; 
+
+	//! @brief List of attached observers. 
+	std::vector<std::weak_ptr<IObserver<T>>> mObservers; 
+
+	//! @brief Polling status boolean.
+	std::atomic<bool> mPolling; 
+
+	//! @brief Notification status boolean
+	std::atomic<bool> mNotifying;
+
+	//! @brief Polling thread.
+	std::unique_ptr<std::thread> mPollThread; 
+
+	//! @brief Notification thread
+	std::unique_ptr<std::thread> mNotifyThread;
+
+	//! @brief Function called by @p m_poll_thread.
+	void pollQueue();
+
+	//! @sa tamgef::IObservable<T>::notify_observers()
+	void notifyObservers() override;
+
+}; // class ObserverController
+
+template<typename T>
+ObserverController<T>::ObserverController() : 
+	ObserverController(nullptr)
+{}
+
+/// @details Creates a weak reference to @p queue. Initializes
+/// polling and notification status boolean to false.
+/// @pre @p queue is a valid reference to an IQueue<T> object.
+/// @post @p polling status is defaulted to false, thus polling
+/// thread is started in an idle state.
+template<typename T>
+ObserverController<T>::ObserverController(
+		std::shared_ptr<IQueue<T>> queue) :
+ 	Controller(queue),	
+	mPolling(false),
+	mNotifying(false),
+{} 
+
+/// @details Joins polling thread, release reference to poll queue
+/// and empties message buffer.
+/// @pre Polling thread is joinable.
+/// @post mPollQueue no longer points to a valid queue object.
+template<typename T>
+ObserverController<T>::~ObserverController()
+{
+	stopPolling();
+	stopNotifying();
+}
+
+/// @details Dequeues latest message from poll queue 
+/// and buffers a copy.
+template<typename T>
+void ObserverController<T>::pollQueue()
+{
+	while(isPolling()) {
+		if (auto queue = mPollQueue.lock()) {
+			T message = T();
+			if(queue->dequeue(message)) {
+				mMessages.enqueue(std::move(message));
+			}
+		}
+	}
+}
+
+/// @details Updates each valid observer in a new
+/// thread with a copy of the current message buffer.
+/// Complexity O()n m = number of messages assuming m >> n.
+template<typename T>
+void ObserverController<T>::notifyObservers()
+{
+	while(isNotifying()) {
+		T message = T();
+		if(mMessages.try_dequeue(message)) {
+			std::vector<std::weak_ptr<IObserver<T>>> observers;
+
+			{
+				std::lock_guard<std::mutex> lock(mObserversMutex);
+				observers = mObservers;
+			}
+
+			for(auto& o : observers) {
+				if(auto observer = o.lock()) {
+					try {
+						observer->update(message);
+					}
+					catch(...) {
+						std::cerr << "ERROR: Update failure in thread"
+							<< std::this_thread::get_id() << std::endl;
+					}
+				}
+			}
+		}
+	}
+}
+
+/// @details Creates weak reference to object managed by observer
+/// and appends it to list of observers. Complexity: O(1) 
+/// @p T should be EmplaceConstructible and MoveInsertable.
+template<typename T>
+bool ObserverController<T>::attachObserver
+(std::shared_ptr<IObserver<T>> observer)
+{
+	if (!observer.get()) {
+		throw std::invalid_argument("ERROR: Invalid ref to observer");
+	}
+
+	{
+		std::lock_guard<std::mutex> lock(mObserversMutex);
+		mObservers.emplace_back(observer);
+	}
+
+	return true;
+}
+
+/// @details Using the "Erase-remove idiom" observer is deleted
+///	from the list of observers.
+///	Complexity: O(n) n = no of observers
+template<typename T>
+bool ObserverController<T>::detachObserver
+(std::shared_ptr<IObserver<T>> observer)
+{
+	if (!observer.get()) {
+		throw std::invalid_argument("ERROR: Invalid ref to observer");
+	}
+
+	if(mObservers.empty()) {
+		return false;
+	}
+	
+	{
+		std::lock_guard<std::mutex> lock(mObserversMutex);
+		auto new_end = std::remove_if(
+			mObservers.begin(),
+			mObservers.end(),
+			[&](const std::weak_ptr<IObserver<T>>& o)
+			{
+				return o.lock() == observer;
+			});
+
+		// iterator at the end of list, observer not found.
+		if (new_end == mObservers.end()) {
+			return false;
+		}
+
+		mObservers.erase(new_end, mObservers.end());
+	}
+
+	return true;
+}
+
+/// @details Performs an atomic read to polling
+/// status boolean as guaranteed by std::memory_order_acquire
+template<typename T>
+bool ObserverController<T>::isPolling()
+{
+	return mPolling.load(std::memory_order_acquire);
+}
+
+/// @details Performs an atomic read to notifications
+/// status boolean as guaranteed by std::memory_order_acquire
+template<typename T>
+bool ObserverController<T>::isNotifying() 
+{
+	return mNotifying.load(std::memory_order_acquire);
+}
+
+template<typename T>
+bool ObserverController<T>::startNotifying()
+{
+	if(isNotifying()) {
+		return false;
+	}
+	
+	// thread reference should be empty 
+	assert(!mNotifyThread.get());
+
+	mNotifying.store(true, std::memory_order_release);
+	mNotifyThread.reset(new std::thread(
+				&ObserverController<T>::pollQueue, this));
+
+	return true;
+}
+
+template<typename T>
+bool ObserverController<T>::startPolling()
+{
+	if(isPolling()) {
+		return false;
+	}
+
+	// thread reference should be empty
+	assert(!mPollThread.get());
+
+	mPolling.store(true, std::memory_order_release);
+	mPollThread.reset(new std::thread(
+				&ObserverController<T>::pollQueue, this));
+
+	return true;
+}
+
+template<typename T>
+bool ObserverController<T>::stopPolling()
+{
+	if(isPolling()) {
+		
+		// if polling, thread reference should be valid
+		assert(mPollThread.get());
+
+		mPolling.store(false, std::memory_order_release);
+		if(mPollThread->joinable()) {
+			mPollThread->join();
+			mPollThread.reset();
+
+			return true;
+		}
+	}
+
+	return false;
+}
+
+template<typename T>
+bool ObserverController<T>::stopNotifying()
+{
+	if(isNotifying()) {
+
+		// if notifying, thread reference should be valid 
+		assert(mNotifyThread.get());
+
+		mNotifying.store(false, std::memory_order_release);
+		if(mNotifyThread->joinable()) {
+			mNotifyThread->join();
+			mNotifyThread.reset();
+
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/// @details Performs an atomic write to 
+/// boolean as guaranteed by std::atomic<bool>
+template<typename T>
+bool ObserverController<T>::start()
+{
+	return startPolling() && startNotifying();
+}
+
+/// @details Performs an atomic write to 
+/// boolean as guaranteed by std::atomic<bool>
+template<typename T>
+bool ObserverController<T>::stop()
+{
+	return stopPolling() && stopNotifying();
+}
+
+} // namespace controller
+
+} // namespace tamgef
+
+#endif

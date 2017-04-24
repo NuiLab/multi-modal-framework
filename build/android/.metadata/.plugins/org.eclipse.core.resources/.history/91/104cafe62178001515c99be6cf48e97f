@@ -1,0 +1,11 @@
+#include <jni.h>
+
+// std
+
+// TAMGeF
+#include <device/domain.h>
+#include <device/event.h>
+#include <device/resolution_function.h>
+#include <device/state.h>
+
+

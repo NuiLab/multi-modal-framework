@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Debug|Win32|\\bear-ad.cs.fiu.edu\homes\Documents\jasthoma\dev\OpenHID\test\msvc\openhid_benchmarks\|

@@ -1,0 +1,129 @@
+#ifndef EXPERIMENT_CONTROLLER_H
+#define EXPERIMENT_CONTROLLER_H
+
+#include <algorithm>
+#include <chrono>
+#include <functional>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <queue>
+
+namespace tamgef {
+namespace experiment {
+
+class Training;
+
+struct ExperimentController
+{ 
+  enum class ExperimentStates
+  {
+    Initial,
+    Started,
+    Device_Running,
+    Device_Exited,
+    Device_Expired,
+    Stopped
+  };
+
+  enum class ExperimentModes
+  {
+    None,
+    Training,
+    Treatment
+  };
+
+  struct ExperimentGuard
+  {
+    ExperimentGuard()
+      : ExperimentGuard(false)
+    {}
+    
+    ExperimentGuard(bool shuffleExperiment)
+      : mShuffle(shuffleExperiment),
+        mStarted(false),
+        mTimerSet(false),
+        mPaused(false),
+        mFirstPop(false)
+    {}
+
+    bool mShuffle;
+    bool mStarted;
+    bool mTimerSet;
+    bool mPaused;
+    bool mFirstPop;
+  };
+
+  struct ExperimentStatus
+  {
+    ExperimentStatus()
+      : mExperimentState(ExperimentStates::Initial),
+        mExperimentMode(ExperimentModes::None),
+        mExperimentGuard(false)
+    {}
+
+    ExperimentStatus(ExperimentStates experimentState,
+                     ExperimentModes experimentMode,
+                     ExperimentGuard experimentGuard)
+      : mExperimentState(experimentState),
+        mExperimentMode(experimentMode),
+        mExperimentGuard(experimentGuard)
+    {}
+
+    std::ostream & operator << (std::ostream & out)
+    {
+      out << "{ExperimentController::ExperimentStatus} : "
+          << "Experiment State : " 
+          << std::static_cast<typename std::underlying_type<ExperimentStatus> mExperimentState;
+      return out;
+    }
+
+    ExperimentGuard mExperimentGuard;
+    ExperimentStates mExperimentState;
+    ExperimentModes mExperimentMode;
+  };
+
+
+  ExperimentController(std::string const& subjectName, 
+                       std::string const& experimentName, 
+                       bool shuffleExperiment);
+
+  ~ExperimentController();
+
+  std::ostream & operator << (std::ostream & out);
+
+  bool append(Training const &);
+  bool abort();
+  void clean();
+  bool resume();
+  bool ready();
+  bool start();
+  bool stop();
+  ExperimentStatus status();
+  bool next();
+  bool pause();
+  bool ready();
+  void shuffle();
+  std::string time();
+  void update();
+  void write(std::ostream &, std::string const&);
+  
+  ExperimentStatus mExperimentStatus;
+  std::vector<Training> mExperimentDeviceList;
+  std::string mExperimentName;
+  std::string mSubjectName;
+
+};// class ExperimentController
+
+std::ostream & ExperimentController::operator << (std::ostream & out)
+{
+  out << "{Experiment Controller} : "
+      << " Experiment Name : " << mExperimentName
+      << " Subject Name : " << mSubjectName
+      << mExperimentStatus;
+}
+
+} // namespace experiment
+} // namespace tamgef
+
+#endif

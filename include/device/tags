@@ -1,0 +1,296 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DEVICE_H	device.h	2;"	d
+DOMAIN_H	domain.h	2;"	d
+Device	device.h	/^	Device();$/;"	p	class:tamgef::device::Device	access:public	signature:()
+Device	device.h	/^	Device(Device<Input, Output, State, Event> &&);$/;"	p	class:tamgef::device::Device	access:public	signature:(Device<Input, Output, State, Event> &&)
+Device	device.h	/^	Device(Device<Input, Output, State, Event> const&);$/;"	p	class:tamgef::device::Device	access:public	signature:(Device<Input, Output, State, Event> const&)
+Device	device.h	/^class Device$/;"	c	namespace:tamgef::device
+Domain	domain.h	/^	Domain() = default;$/;"	p	class:tamgef::device::Domain	access:public	signature:()
+Domain	domain.h	/^	Domain(Domain<T> &&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> &&)
+Domain	domain.h	/^	Domain(Domain<T> const&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&)
+Domain	domain.h	/^	Domain(std::function<bool(T const&)>);$/;"	p	class:tamgef::device::Domain	access:public	signature:(std::function<bool(T const&)>)
+Domain	domain.h	/^Domain<T>::Domain(Domain<T> && other) :$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> && other)
+Domain	domain.h	/^Domain<T>::Domain(Domain<T> const& other) :$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other)
+Domain	domain.h	/^Domain<T>::Domain(std::function<bool(T const&)> predicate) :$/;"	f	class:tamgef::device::Domain	signature:(std::function<bool(T const&)> predicate)
+Domain	domain.h	/^class Domain$/;"	c	namespace:tamgef::device
+EVENT_FUNCTION	event_function.h	2;"	d
+EVENT_H	event.h	2;"	d
+ErrorLog	generic_device.h	/^	ConcurrentQueue<std::exception_ptr> ErrorLog;$/;"	m	class:tamgef::device::GenericDevice	access:private
+Event	event.h	/^	Event() = delete;$/;"	p	class:tamgef::device::Event	access:public	signature:()
+Event	event.h	/^	Event(Event<T> &&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> &&)
+Event	event.h	/^	Event(Event<T> const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> const&)
+Event	event.h	/^	Event(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+Event	event.h	/^Event<T>::Event(Event<T> && other) :$/;"	f	class:tamgef::device::Event	signature:(Event<T> && other)
+Event	event.h	/^Event<T>::Event(Event<T> const& other) :$/;"	f	class:tamgef::device::Event	signature:(Event<T> const& other)
+Event	event.h	/^Event<T>::Event(T const& type) :$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+Event	event.h	/^class Event$/;"	c	namespace:tamgef::device
+FUNCTION_H	resolution_function.h	2;"	d
+GENERIC_DEVICE_H	generic_device.h	2;"	d
+GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( GenericDevice< Input, Output, StateType, EventType > && other)
+GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( GenericDevice< Input, Output, StateType, EventType > const& other)
+GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( std::function<bool(Input const&)> const& inputDomain, std::function<bool(Input const&, Output &)> const& resolutionFunction, std::function<bool(Output const&)> const& outputDomain, std::function<bool(State &)> const& stateFunction, std::initializer_list<)
+GenericDevice	generic_device.h	/^class GenericDevice$/;"	c	namespace:tamgef::device
+STATES_H	state_machine.h	2;"	d
+STATE_H	state.h	2;"	d
+State	state.h	/^	State() = default;$/;"	p	class:tamgef::device::State	access:public	signature:()
+State	state.h	/^	State(std::function<Type()> const&);$/;"	p	class:tamgef::device::State	access:public	signature:(std::function<Type()> const&)
+State	state.h	/^State<Type>::State($/;"	f	class:tamgef::device::State	signature:( std::function<Type()> const& function)
+State	state.h	/^class State$/;"	c	namespace:tamgef::device
+StateMachine	state_machine.h	/^	StateMachine();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+StateMachine	state_machine.h	/^	StateMachine(StateMachine const&) = delete;$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine const&)
+StateMachine	state_machine.h	/^	StateMachine(StateMachine&&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine&&)
+StateMachine	state_machine.h	/^StateMachine<T>::StateMachine() :$/;"	f	class:tamgef::device::StateMachine	signature:()
+StateMachine	state_machine.h	/^class StateMachine$/;"	c	namespace:tamgef::device
+addState	state_machine.h	/^	bool addState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+addState	state_machine.h	/^	bool addState(std::string const& stateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName, std::function<T> const& stateEvent)
+addState	state_machine.h	/^bool StateMachine<T>::addState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+addState	state_machine.h	/^bool StateMachine<T>::addState(std::string const& stateName, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName, std::function<T> const& stateEvent)
+addTransition	state_machine.h	/^	bool addTransition(std::string const& fromStateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& fromStateName, std::string const& toStateName)
+addTransition	state_machine.h	/^	bool addTransition(std::string const& fromStateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& fromStateName, std::string const& toStateName, std::function<bool()> const& transitionPredicate)
+addTransition	state_machine.h	/^bool StateMachine<T>::addTransition(std::string const& fromState, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& fromState, std::string const& toState)
+addTransition	state_machine.h	/^bool StateMachine<T>::addTransition(std::string const& fromState, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& fromState, std::string const& toState, std::function<bool()> const& transitionPredicate)
+device	device.h	/^namespace device$/;"	n	namespace:tamgef
+device	domain.h	/^namespace device$/;"	n	namespace:tamgef
+device	event.h	/^namespace device$/;"	n	namespace:tamgef
+device	event_function.h	/^namespace device$/;"	n	namespace:tamgef
+device	generic_device.h	/^namespace device$/;"	n	namespace:tamgef
+device	resolution_function.h	/^namespace device$/;"	n	namespace:tamgef
+device	state.h	/^namespace device$/;"	n	namespace:tamgef
+device	state_machine.h	/^namespace device$/;"	n	namespace:tamgef
+getPresentState	state_machine.h	/^	std::string getPresentState() const;$/;"	p	class:tamgef::device::StateMachine	access:public	signature:() const
+getPresentState	state_machine.h	/^std::string StateMachine<T>::getPresentState() const$/;"	f	class:tamgef::device::StateMachine	signature:() const
+getState	state.h	/^	Type getState() const;$/;"	p	class:tamgef::device::State	access:public	signature:() const
+getState	state.h	/^Type State<Type>::getState() const$/;"	f	class:tamgef::device::State	signature:() const
+lower	event.h	/^	void lower();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+lower	event.h	/^void Event<T>::lower()$/;"	f	class:tamgef::device::Event	signature:()
+mEventFunction	generic_device.h	/^	EventFunction<EventType> mEventFunction;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+mEventMap	device.h	/^	EventMap<Event, State> mEventMap;$/;"	m	class:tamgef::device::Device	access:private
+mEventQueue	generic_device.h	/^	ConcurrentQueue<Event*> mEventQueue;$/;"	m	class:tamgef::device::GenericDevice	access:private
+mEventQueue	state_machine.h	/^	moodycamel::ConcurrentQueue<std::function<T>> mEventQueue;$/;"	m	class:tamgef::device::StateMachine	access:public
+mEventThreadPool	state_machine.h	/^	std::vector<std::thread> mEventThreadPool;$/;"	m	class:tamgef::device::StateMachine	access:public
+mFinalStateName	state_machine.h	/^	std::string mFinalStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+mFlag	event.h	/^	std::atomic<bool> mFlag;$/;"	m	class:tamgef::device::Event	access:private
+mFunction	state.h	/^	std::function<Type()> mFunction;$/;"	m	class:tamgef::device::State	access:private
+mInitialStateName	state_machine.h	/^	std::string mInitialStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+mInputDomain	device.h	/^	DomainFunction<Input> mInputDomain;$/;"	m	class:tamgef::device::Device	access:private
+mInputDomain	generic_device.h	/^	Domain<Input> mInputDomain;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+mIsActive	state_machine.h	/^	std::atomic<bool> mIsActive;$/;"	m	class:tamgef::device::StateMachine	access:public
+mOutputDomain	generic_device.h	/^	Domain<Output> mOutputDomain;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+mPredicate	domain.h	/^	std::function<bool(T const&)> mPredicate;$/;"	m	class:tamgef::device::Domain	access:private
+mPresentStateName	state_machine.h	/^	std::string mPresentStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+mResolutionFunction	device.h	/^	ResolutionFunction<Input, Output> mResolutionFunction;$/;"	m	class:tamgef::device::Device	access:private
+mResolutionFunction	generic_device.h	/^	ResolutionFunction<Input, Output> mResolutionFunction;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+mState	device.h	/^	State mState;$/;"	m	class:tamgef::device::Device	access:private
+mState	generic_device.h	/^	State<Output> mState;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+mState	state.h	/^	Type mState;$/;"	m	class:tamgef::device::State	access:private
+mStateFunction	device.h	/^	StateFunction<State> mStateFunction;$/;"	m	class:tamgef::device::Device	access:private
+mStateMap	state_machine.h	/^	std::map<std::string, std::function<T>> mStateMap;$/;"	m	class:tamgef::device::StateMachine	access:public
+mTransitionMap	state_machine.h	/^		std::function<bool()>>> mTransitionMap;$/;"	m	class:tamgef::device::StateMachine	access:public
+mType	event.h	/^	T mType;$/;"	m	class:tamgef::device::Event	access:private
+operator ()	domain.h	/^	bool operator()(T const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(T const&) const
+operator ()	domain.h	/^bool Domain<T>::operator()(T const& element) const$/;"	f	class:tamgef::device::Domain	signature:(T const& element) const
+operator ()	state.h	/^	Type operator()();$/;"	p	class:tamgef::device::State	access:public	signature:()
+operator ()	state.h	/^Type State<Type>::operator()()$/;"	f	class:tamgef::device::State	signature:()
+operator *	domain.h	/^	Domain<T> operator*(Domain<T> const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&) const
+operator *	domain.h	/^Domain<T> DOmain<T>::operator*(Domain<T> const& other) const$/;"	f	class:tamgef::device::DOmain	signature:(Domain<T> const& other) const
+operator +	device.h	/^	Device<Input, Output, State, Event> operator+($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> const&)
+operator +	domain.h	/^	Domain<T> operator+(Domain<T> const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&) const
+operator +	domain.h	/^Domain<T> Domain<T>::operator+(Domain<T> const& other) const$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other) const
+operator =	device.h	/^	Device<Input, Output, State, Event> operator=($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> &&)
+operator =	device.h	/^	Device<Input, Output, State, Event> operator=($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> const&)
+operator =	domain.h	/^	Domain<T> operator=(Domain<T> &&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> &&)
+operator =	domain.h	/^	Domain<T> operator=(Domain<T> const&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&)
+operator =	domain.h	/^Domain<T> Domain<T>::operator=(Domain<T> && other)$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> && other)
+operator =	domain.h	/^Domain<T> Domain<T>::operator=(Domain<T> const& other)$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other)
+operator =	event.h	/^	Event<T> & operator=(Event<T> &&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> &&)
+operator =	event.h	/^	Event<T> & operator=(Event<T> const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> const&)
+operator =	event.h	/^Event<T> & Event<T>::operator=(Event<T> && other)$/;"	f	class:tamgef::device::Event	signature:(Event<T> && other)
+operator =	event.h	/^Event<T> & Event<T>::operator=(Event<T> const& other)$/;"	f	class:tamgef::device::Event	signature:(Event<T> const& other)
+operator =	state_machine.h	/^	StateMachine& operator=(StateMachine const&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine const&)
+operator =	state_machine.h	/^	StateMachine& operator=(StateMachine&&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine&&)
+pStateHandlerThread	state_machine.h	/^	std::shared_ptr<std::thread> pStateHandlerThread;$/;"	m	class:tamgef::device::StateMachine	access:public
+raise	event.h	/^	void raise();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+raise	event.h	/^void Event<T>::raise()$/;"	f	class:tamgef::device::Event	signature:()
+read	generic_device.h	/^	virtual bool read(Input const& input)$/;"	f	class:tamgef::device::GenericDevice	access:public	signature:(Input const& input)
+registerType	event.h	/^	static bool registerType(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+registerType	event.h	/^bool Event<T>::registerType(T const& type)$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+registered	event.h	/^	static bool registered(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+registered	event.h	/^bool Event<T>::registered(T const& type)$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+registeredTypes	event.h	/^	static std::vector<T> registeredTypes();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+registeredTypes	event.h	/^std::vector<T> Event<T>::registeredTypes()$/;"	f	class:tamgef::device::Event	signature:()
+sRegisteredTypes	event.h	/^	static std::vector<T> sRegisteredTypes;$/;"	m	class:tamgef::device::Event	access:private
+setFinalState	state_machine.h	/^	bool setFinalState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+setFinalState	state_machine.h	/^bool StateMachine<T>::setFinalState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+setFunction	state.h	/^	void setFunction(std::function<Type()> const&);$/;"	p	class:tamgef::device::State	access:public	signature:(std::function<Type()> const&)
+setFunction	state.h	/^void State<Type>::setFunction($/;"	f	class:tamgef::device::State	signature:( std::function<Type()> const& fn)
+setInitialState	state_machine.h	/^	bool setInitialState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+setInitialState	state_machine.h	/^bool StateMachine<T>::setInitialState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+setState	state.h	/^	void setState(Type const&);$/;"	p	class:tamgef::device::State	access:public	signature:(Type const&)
+setState	state.h	/^void State<Type>::setState(Type const& state)$/;"	f	class:tamgef::device::State	signature:(Type const& state)
+start	generic_device.h	/^	virtual bool start() = 0;$/;"	p	class:tamgef::device::GenericDevice	access:public	signature:()
+start	state_machine.h	/^	bool start();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+start	state_machine.h	/^	bool start(std::string const& initialStateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& initialStateName)
+start	state_machine.h	/^bool StateMachine<T>::start()$/;"	f	class:tamgef::device::StateMachine	signature:()
+start	state_machine.h	/^bool StateMachine<T>::start(std::string const& initialStateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& initialStateName)
+stateHandler	state_machine.h	/^	void stateHandler();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+stateHandler	state_machine.h	/^void StateMachine<T>::stateHandler()$/;"	f	class:tamgef::device::StateMachine	signature:()
+stop	generic_device.h	/^	virtual bool stop() = 0;$/;"	p	class:tamgef::device::GenericDevice	access:public	signature:()
+stop	state_machine.h	/^	bool stop();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+stop	state_machine.h	/^bool StateMachine<T>::stop()$/;"	f	class:tamgef::device::StateMachine	signature:()
+tamgef	device.h	/^namespace tamgef $/;"	n
+tamgef	domain.h	/^namespace tamgef$/;"	n
+tamgef	event.h	/^namespace tamgef$/;"	n
+tamgef	event_function.h	/^namespace tamgef$/;"	n
+tamgef	generic_device.h	/^namespace tamgef$/;"	n
+tamgef	resolution_function.h	/^namespace tamgef $/;"	n
+tamgef	state.h	/^namespace tamgef$/;"	n
+tamgef	state_machine.h	/^namespace tamgef $/;"	n
+tamgef::device	device.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	domain.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	event.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	event_function.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	generic_device.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	resolution_function.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	state.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device	state_machine.h	/^namespace device$/;"	n	namespace:tamgef
+tamgef::device::DOmain::operator *	domain.h	/^Domain<T> DOmain<T>::operator*(Domain<T> const& other) const$/;"	f	class:tamgef::device::DOmain	signature:(Domain<T> const& other) const
+tamgef::device::Device	device.h	/^class Device$/;"	c	namespace:tamgef::device
+tamgef::device::Device::Device	device.h	/^	Device();$/;"	p	class:tamgef::device::Device	access:public	signature:()
+tamgef::device::Device::Device	device.h	/^	Device(Device<Input, Output, State, Event> &&);$/;"	p	class:tamgef::device::Device	access:public	signature:(Device<Input, Output, State, Event> &&)
+tamgef::device::Device::Device	device.h	/^	Device(Device<Input, Output, State, Event> const&);$/;"	p	class:tamgef::device::Device	access:public	signature:(Device<Input, Output, State, Event> const&)
+tamgef::device::Device::mEventMap	device.h	/^	EventMap<Event, State> mEventMap;$/;"	m	class:tamgef::device::Device	access:private
+tamgef::device::Device::mInputDomain	device.h	/^	DomainFunction<Input> mInputDomain;$/;"	m	class:tamgef::device::Device	access:private
+tamgef::device::Device::mResolutionFunction	device.h	/^	ResolutionFunction<Input, Output> mResolutionFunction;$/;"	m	class:tamgef::device::Device	access:private
+tamgef::device::Device::mState	device.h	/^	State mState;$/;"	m	class:tamgef::device::Device	access:private
+tamgef::device::Device::mStateFunction	device.h	/^	StateFunction<State> mStateFunction;$/;"	m	class:tamgef::device::Device	access:private
+tamgef::device::Device::operator +	device.h	/^	Device<Input, Output, State, Event> operator+($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> const&)
+tamgef::device::Device::operator =	device.h	/^	Device<Input, Output, State, Event> operator=($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> &&)
+tamgef::device::Device::operator =	device.h	/^	Device<Input, Output, State, Event> operator=($/;"	p	class:tamgef::device::Device	access:public	signature:( Device<Input, Output, State, Event> const&)
+tamgef::device::Domain	domain.h	/^class Domain$/;"	c	namespace:tamgef::device
+tamgef::device::Domain::Domain	domain.h	/^	Domain() = default;$/;"	p	class:tamgef::device::Domain	access:public	signature:()
+tamgef::device::Domain::Domain	domain.h	/^	Domain(Domain<T> &&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> &&)
+tamgef::device::Domain::Domain	domain.h	/^	Domain(Domain<T> const&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&)
+tamgef::device::Domain::Domain	domain.h	/^	Domain(std::function<bool(T const&)>);$/;"	p	class:tamgef::device::Domain	access:public	signature:(std::function<bool(T const&)>)
+tamgef::device::Domain::Domain	domain.h	/^Domain<T>::Domain(Domain<T> && other) :$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> && other)
+tamgef::device::Domain::Domain	domain.h	/^Domain<T>::Domain(Domain<T> const& other) :$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other)
+tamgef::device::Domain::Domain	domain.h	/^Domain<T>::Domain(std::function<bool(T const&)> predicate) :$/;"	f	class:tamgef::device::Domain	signature:(std::function<bool(T const&)> predicate)
+tamgef::device::Domain::mPredicate	domain.h	/^	std::function<bool(T const&)> mPredicate;$/;"	m	class:tamgef::device::Domain	access:private
+tamgef::device::Domain::operator ()	domain.h	/^	bool operator()(T const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(T const&) const
+tamgef::device::Domain::operator ()	domain.h	/^bool Domain<T>::operator()(T const& element) const$/;"	f	class:tamgef::device::Domain	signature:(T const& element) const
+tamgef::device::Domain::operator *	domain.h	/^	Domain<T> operator*(Domain<T> const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&) const
+tamgef::device::Domain::operator +	domain.h	/^	Domain<T> operator+(Domain<T> const&) const;$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&) const
+tamgef::device::Domain::operator +	domain.h	/^Domain<T> Domain<T>::operator+(Domain<T> const& other) const$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other) const
+tamgef::device::Domain::operator =	domain.h	/^	Domain<T> operator=(Domain<T> &&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> &&)
+tamgef::device::Domain::operator =	domain.h	/^	Domain<T> operator=(Domain<T> const&);$/;"	p	class:tamgef::device::Domain	access:public	signature:(Domain<T> const&)
+tamgef::device::Domain::operator =	domain.h	/^Domain<T> Domain<T>::operator=(Domain<T> && other)$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> && other)
+tamgef::device::Domain::operator =	domain.h	/^Domain<T> Domain<T>::operator=(Domain<T> const& other)$/;"	f	class:tamgef::device::Domain	signature:(Domain<T> const& other)
+tamgef::device::Domain::~Domain	domain.h	/^	virtual ~Domain() = default;$/;"	p	class:tamgef::device::Domain	access:public	signature:()
+tamgef::device::Event	event.h	/^class Event$/;"	c	namespace:tamgef::device
+tamgef::device::Event::Event	event.h	/^	Event() = delete;$/;"	p	class:tamgef::device::Event	access:public	signature:()
+tamgef::device::Event::Event	event.h	/^	Event(Event<T> &&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> &&)
+tamgef::device::Event::Event	event.h	/^	Event(Event<T> const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> const&)
+tamgef::device::Event::Event	event.h	/^	Event(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+tamgef::device::Event::Event	event.h	/^Event<T>::Event(Event<T> && other) :$/;"	f	class:tamgef::device::Event	signature:(Event<T> && other)
+tamgef::device::Event::Event	event.h	/^Event<T>::Event(Event<T> const& other) :$/;"	f	class:tamgef::device::Event	signature:(Event<T> const& other)
+tamgef::device::Event::Event	event.h	/^Event<T>::Event(T const& type) :$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+tamgef::device::Event::lower	event.h	/^	void lower();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+tamgef::device::Event::lower	event.h	/^void Event<T>::lower()$/;"	f	class:tamgef::device::Event	signature:()
+tamgef::device::Event::mFlag	event.h	/^	std::atomic<bool> mFlag;$/;"	m	class:tamgef::device::Event	access:private
+tamgef::device::Event::mType	event.h	/^	T mType;$/;"	m	class:tamgef::device::Event	access:private
+tamgef::device::Event::operator =	event.h	/^	Event<T> & operator=(Event<T> &&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> &&)
+tamgef::device::Event::operator =	event.h	/^	Event<T> & operator=(Event<T> const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(Event<T> const&)
+tamgef::device::Event::operator =	event.h	/^Event<T> & Event<T>::operator=(Event<T> && other)$/;"	f	class:tamgef::device::Event	signature:(Event<T> && other)
+tamgef::device::Event::operator =	event.h	/^Event<T> & Event<T>::operator=(Event<T> const& other)$/;"	f	class:tamgef::device::Event	signature:(Event<T> const& other)
+tamgef::device::Event::raise	event.h	/^	void raise();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+tamgef::device::Event::raise	event.h	/^void Event<T>::raise()$/;"	f	class:tamgef::device::Event	signature:()
+tamgef::device::Event::registerType	event.h	/^	static bool registerType(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+tamgef::device::Event::registerType	event.h	/^bool Event<T>::registerType(T const& type)$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+tamgef::device::Event::registered	event.h	/^	static bool registered(T const&);$/;"	p	class:tamgef::device::Event	access:public	signature:(T const&)
+tamgef::device::Event::registered	event.h	/^bool Event<T>::registered(T const& type)$/;"	f	class:tamgef::device::Event	signature:(T const& type)
+tamgef::device::Event::registeredTypes	event.h	/^	static std::vector<T> registeredTypes();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+tamgef::device::Event::registeredTypes	event.h	/^std::vector<T> Event<T>::registeredTypes()$/;"	f	class:tamgef::device::Event	signature:()
+tamgef::device::Event::sRegisteredTypes	event.h	/^	static std::vector<T> sRegisteredTypes;$/;"	m	class:tamgef::device::Event	access:private
+tamgef::device::Event::type	event.h	/^	T type() const;$/;"	p	class:tamgef::device::Event	access:public	signature:() const
+tamgef::device::Event::type	event.h	/^T Event<T>::type() const$/;"	f	class:tamgef::device::Event	signature:() const
+tamgef::device::Event::~Event	event.h	/^	virtual ~Event();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+tamgef::device::GenericDevice	generic_device.h	/^class GenericDevice$/;"	c	namespace:tamgef::device
+tamgef::device::GenericDevice::ErrorLog	generic_device.h	/^	ConcurrentQueue<std::exception_ptr> ErrorLog;$/;"	m	class:tamgef::device::GenericDevice	access:private
+tamgef::device::GenericDevice::GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( GenericDevice< Input, Output, StateType, EventType > && other)
+tamgef::device::GenericDevice::GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( GenericDevice< Input, Output, StateType, EventType > const& other)
+tamgef::device::GenericDevice::GenericDevice	generic_device.h	/^	GenericDevice($/;"	f	class:tamgef::device::GenericDevice	access:public	signature:( std::function<bool(Input const&)> const& inputDomain, std::function<bool(Input const&, Output &)> const& resolutionFunction, std::function<bool(Output const&)> const& outputDomain, std::function<bool(State &)> const& stateFunction, std::initializer_list<)
+tamgef::device::GenericDevice::mEventFunction	generic_device.h	/^	EventFunction<EventType> mEventFunction;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+tamgef::device::GenericDevice::mEventQueue	generic_device.h	/^	ConcurrentQueue<Event*> mEventQueue;$/;"	m	class:tamgef::device::GenericDevice	access:private
+tamgef::device::GenericDevice::mInputDomain	generic_device.h	/^	Domain<Input> mInputDomain;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+tamgef::device::GenericDevice::mOutputDomain	generic_device.h	/^	Domain<Output> mOutputDomain;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+tamgef::device::GenericDevice::mResolutionFunction	generic_device.h	/^	ResolutionFunction<Input, Output> mResolutionFunction;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+tamgef::device::GenericDevice::mState	generic_device.h	/^	State<Output> mState;$/;"	m	class:tamgef::device::GenericDevice	access:protected
+tamgef::device::GenericDevice::read	generic_device.h	/^	virtual bool read(Input const& input)$/;"	f	class:tamgef::device::GenericDevice	access:public	signature:(Input const& input)
+tamgef::device::GenericDevice::start	generic_device.h	/^	virtual bool start() = 0;$/;"	p	class:tamgef::device::GenericDevice	access:public	signature:()
+tamgef::device::GenericDevice::stop	generic_device.h	/^	virtual bool stop() = 0;$/;"	p	class:tamgef::device::GenericDevice	access:public	signature:()
+tamgef::device::GenericDevice::~GenericDevice	generic_device.h	/^	virtual ~GenericDevice()$/;"	f	class:tamgef::device::GenericDevice	access:public	signature:()
+tamgef::device::State	state.h	/^class State$/;"	c	namespace:tamgef::device
+tamgef::device::State::State	state.h	/^	State() = default;$/;"	p	class:tamgef::device::State	access:public	signature:()
+tamgef::device::State::State	state.h	/^	State(std::function<Type()> const&);$/;"	p	class:tamgef::device::State	access:public	signature:(std::function<Type()> const&)
+tamgef::device::State::State	state.h	/^State<Type>::State($/;"	f	class:tamgef::device::State	signature:( std::function<Type()> const& function)
+tamgef::device::State::getState	state.h	/^	Type getState() const;$/;"	p	class:tamgef::device::State	access:public	signature:() const
+tamgef::device::State::getState	state.h	/^Type State<Type>::getState() const$/;"	f	class:tamgef::device::State	signature:() const
+tamgef::device::State::mFunction	state.h	/^	std::function<Type()> mFunction;$/;"	m	class:tamgef::device::State	access:private
+tamgef::device::State::mState	state.h	/^	Type mState;$/;"	m	class:tamgef::device::State	access:private
+tamgef::device::State::operator ()	state.h	/^	Type operator()();$/;"	p	class:tamgef::device::State	access:public	signature:()
+tamgef::device::State::operator ()	state.h	/^Type State<Type>::operator()()$/;"	f	class:tamgef::device::State	signature:()
+tamgef::device::State::setFunction	state.h	/^	void setFunction(std::function<Type()> const&);$/;"	p	class:tamgef::device::State	access:public	signature:(std::function<Type()> const&)
+tamgef::device::State::setFunction	state.h	/^void State<Type>::setFunction($/;"	f	class:tamgef::device::State	signature:( std::function<Type()> const& fn)
+tamgef::device::State::setState	state.h	/^	void setState(Type const&);$/;"	p	class:tamgef::device::State	access:public	signature:(Type const&)
+tamgef::device::State::setState	state.h	/^void State<Type>::setState(Type const& state)$/;"	f	class:tamgef::device::State	signature:(Type const& state)
+tamgef::device::StateMachine	state_machine.h	/^class StateMachine$/;"	c	namespace:tamgef::device
+tamgef::device::StateMachine::StateMachine	state_machine.h	/^	StateMachine();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+tamgef::device::StateMachine::StateMachine	state_machine.h	/^	StateMachine(StateMachine const&) = delete;$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine const&)
+tamgef::device::StateMachine::StateMachine	state_machine.h	/^	StateMachine(StateMachine&&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine&&)
+tamgef::device::StateMachine::StateMachine	state_machine.h	/^StateMachine<T>::StateMachine() :$/;"	f	class:tamgef::device::StateMachine	signature:()
+tamgef::device::StateMachine::addState	state_machine.h	/^	bool addState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+tamgef::device::StateMachine::addState	state_machine.h	/^	bool addState(std::string const& stateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName, std::function<T> const& stateEvent)
+tamgef::device::StateMachine::addState	state_machine.h	/^bool StateMachine<T>::addState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+tamgef::device::StateMachine::addState	state_machine.h	/^bool StateMachine<T>::addState(std::string const& stateName, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName, std::function<T> const& stateEvent)
+tamgef::device::StateMachine::addTransition	state_machine.h	/^	bool addTransition(std::string const& fromStateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& fromStateName, std::string const& toStateName)
+tamgef::device::StateMachine::addTransition	state_machine.h	/^	bool addTransition(std::string const& fromStateName,$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& fromStateName, std::string const& toStateName, std::function<bool()> const& transitionPredicate)
+tamgef::device::StateMachine::addTransition	state_machine.h	/^bool StateMachine<T>::addTransition(std::string const& fromState, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& fromState, std::string const& toState)
+tamgef::device::StateMachine::addTransition	state_machine.h	/^bool StateMachine<T>::addTransition(std::string const& fromState, $/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& fromState, std::string const& toState, std::function<bool()> const& transitionPredicate)
+tamgef::device::StateMachine::getPresentState	state_machine.h	/^	std::string getPresentState() const;$/;"	p	class:tamgef::device::StateMachine	access:public	signature:() const
+tamgef::device::StateMachine::getPresentState	state_machine.h	/^std::string StateMachine<T>::getPresentState() const$/;"	f	class:tamgef::device::StateMachine	signature:() const
+tamgef::device::StateMachine::mEventQueue	state_machine.h	/^	moodycamel::ConcurrentQueue<std::function<T>> mEventQueue;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mEventThreadPool	state_machine.h	/^	std::vector<std::thread> mEventThreadPool;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mFinalStateName	state_machine.h	/^	std::string mFinalStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mInitialStateName	state_machine.h	/^	std::string mInitialStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mIsActive	state_machine.h	/^	std::atomic<bool> mIsActive;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mPresentStateName	state_machine.h	/^	std::string mPresentStateName;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mStateMap	state_machine.h	/^	std::map<std::string, std::function<T>> mStateMap;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::mTransitionMap	state_machine.h	/^		std::function<bool()>>> mTransitionMap;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::operator =	state_machine.h	/^	StateMachine& operator=(StateMachine const&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine const&)
+tamgef::device::StateMachine::operator =	state_machine.h	/^	StateMachine& operator=(StateMachine&&);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(StateMachine&&)
+tamgef::device::StateMachine::pStateHandlerThread	state_machine.h	/^	std::shared_ptr<std::thread> pStateHandlerThread;$/;"	m	class:tamgef::device::StateMachine	access:public
+tamgef::device::StateMachine::setFinalState	state_machine.h	/^	bool setFinalState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+tamgef::device::StateMachine::setFinalState	state_machine.h	/^bool StateMachine<T>::setFinalState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+tamgef::device::StateMachine::setInitialState	state_machine.h	/^	bool setInitialState(std::string const& stateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& stateName)
+tamgef::device::StateMachine::setInitialState	state_machine.h	/^bool StateMachine<T>::setInitialState(std::string const& stateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& stateName)
+tamgef::device::StateMachine::start	state_machine.h	/^	bool start();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+tamgef::device::StateMachine::start	state_machine.h	/^	bool start(std::string const& initialStateName);$/;"	p	class:tamgef::device::StateMachine	access:public	signature:(std::string const& initialStateName)
+tamgef::device::StateMachine::start	state_machine.h	/^bool StateMachine<T>::start()$/;"	f	class:tamgef::device::StateMachine	signature:()
+tamgef::device::StateMachine::start	state_machine.h	/^bool StateMachine<T>::start(std::string const& initialStateName)$/;"	f	class:tamgef::device::StateMachine	signature:(std::string const& initialStateName)
+tamgef::device::StateMachine::stateHandler	state_machine.h	/^	void stateHandler();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+tamgef::device::StateMachine::stateHandler	state_machine.h	/^void StateMachine<T>::stateHandler()$/;"	f	class:tamgef::device::StateMachine	signature:()
+tamgef::device::StateMachine::stop	state_machine.h	/^	bool stop();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+tamgef::device::StateMachine::stop	state_machine.h	/^bool StateMachine<T>::stop()$/;"	f	class:tamgef::device::StateMachine	signature:()
+tamgef::device::StateMachine::~StateMachine	state_machine.h	/^	~StateMachine();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+tamgef::device::StateMachine::~StateMachine	state_machine.h	/^StateMachine<T>::~StateMachine()$/;"	f	class:tamgef::device::StateMachine	signature:()
+type	event.h	/^	T type() const;$/;"	p	class:tamgef::device::Event	access:public	signature:() const
+type	event.h	/^T Event<T>::type() const$/;"	f	class:tamgef::device::Event	signature:() const
+~Domain	domain.h	/^	virtual ~Domain() = default;$/;"	p	class:tamgef::device::Domain	access:public	signature:()
+~Event	event.h	/^	virtual ~Event();$/;"	p	class:tamgef::device::Event	access:public	signature:()
+~GenericDevice	generic_device.h	/^	virtual ~GenericDevice()$/;"	f	class:tamgef::device::GenericDevice	access:public	signature:()
+~StateMachine	state_machine.h	/^	~StateMachine();$/;"	p	class:tamgef::device::StateMachine	access:public	signature:()
+~StateMachine	state_machine.h	/^StateMachine<T>::~StateMachine()$/;"	f	class:tamgef::device::StateMachine	signature:()

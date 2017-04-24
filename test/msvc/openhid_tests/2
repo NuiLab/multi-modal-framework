@@ -1,0 +1,115 @@
+#ifndef CIRCUIT_H
+#define CIRCUIT_H
+
+#include <functional>
+#include <initializer_list>
+#include <memory>
+
+struct circuit {
+	enum class events
+	{
+		on,
+		off,
+		broken,
+		none
+	};
+
+	class volts
+	{
+	public:
+		volts() = default;
+		volts(double voltage) :
+			value(voltage)
+		{}
+
+		double value;
+	};
+
+	class amps
+	{
+	public:
+		amps() = default;
+		amps(double current) :
+			value(current)
+		{}
+
+		double value;
+	};
+
+	class state
+	{
+	public:
+		state() :
+			state(false)
+		{}
+
+		state(bool state) :
+			is_on(state),
+			is_intact(true)
+		{}
+
+		void break_circuit()
+		{
+			is_intact = false;
+		}
+
+		void turn_on()
+		{
+			is_on = true;
+		}
+
+		bool is_on;
+		bool is_intact;
+	};
+};
+
+bool input_domain(circuit::volts voltage)
+{
+	const auto input_voltage_lower_limit = 0;
+	return (voltage.value >= input_voltage_lower_limit);
+}
+
+bool output_domain(circuit::amps current)
+{
+	const auto output_current_upper_limit = 2;
+	return (current.value <= output_current_upper_limit);
+}
+
+circuit::amps resolution_function(circuit::volts voltage)
+{
+	auto switch_resistance = 100;
+	return voltage.value / switch_resistance;
+}
+
+circuit::state state_function(
+	state current_state,
+	volts input_voltage,
+	amps output_current)
+{
+	state new_state(false); // initially off
+	const auto switch_voltage_threshold = 2;
+	const auto switch_current_limit = 1;
+
+	// if broken, can't change state
+	if (!current_state.is_intact)
+		return current_state;
+
+	if (input_voltage.value < switch_voltage_threshold)
+		return new_state; // turn off
+
+	if (output_current.value > switch_current_limit) {
+		new_state.break_circuit(); // break ciruit
+		return new_state;
+	}
+
+	// input and output are valid
+	if (!current_state.is_on) {
+		new_state.turn_on();
+		return new_state;
+	}
+
+	// if on, stay on
+	return current_state;
+}
+
+#endif

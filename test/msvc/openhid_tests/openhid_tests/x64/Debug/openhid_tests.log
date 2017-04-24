@@ -1,0 +1,7 @@
+﻿  queue_reader_test.cpp
+  queue_poller_test.cpp
+  experiment_test.cpp
+  device_test.cpp
+  all_test.cpp
+  Generating Code...
+  openhid_tests.vcxproj -> \\bear-ad.cs.fiu.edu\homes\Documents\jasthoma\dev\OpenHID\test\msvc\openhid_tests\x64\Debug\openhid_tests.exe
